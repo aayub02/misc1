@@ -1,5 +1,5 @@
 import unittest
-import triangle
+import shapes.triangle as triangle
 
 class AATest(unittest.TestCase):
 

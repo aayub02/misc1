@@ -4,7 +4,6 @@ import triangle
 class AATest(unittest.TestCase):
 
     def setUp(self):
-        'IT IS RUNNING!!!!'
         self.t1 = triangle.Triangle([45, 45, 90], 'whyname')
 
     def test_validate_num(self):

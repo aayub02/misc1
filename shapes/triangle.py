@@ -1,8 +1,17 @@
 
 class Triangle:
 
-    def __init__(self, angle_val):
+    def __init__(self, angle_val, name_val):
         setattr(self, 'angles', angle_val)
+        self.name = name_val
+
+    @property
+    def name(self):
+        return self._name
+
+    @name.setter
+    def name(self, value):
+        self._name = self.validate_name(value)
 
     @property
     def angles(self):
@@ -27,3 +36,13 @@ class Triangle:
                         return value
         else:
             raise ValueError('Input must be a list')
+
+    @staticmethod
+    def validate_name(value):
+        if type(value) == str:
+            if value.strip():
+                return value
+            else:
+                raise ValueError('Input must contain 1 or more character')
+        else:
+            raise ValueError('Input must be a string')
